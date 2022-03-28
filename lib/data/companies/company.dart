@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import '../design/colors.dart';
+import '../../design/colors.dart';
 
 part 'company.g.dart';
 

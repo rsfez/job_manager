@@ -1,7 +1,6 @@
-import 'package:job_manager/data/companies.dart';
-import 'package:job_manager/data/company.dart';
-import 'package:job_manager/data/roles.dart';
-import 'package:job_manager/data/skill_set.dart';
+import 'package:job_manager/data/companies/companies.dart';
+import 'package:job_manager/data/roles/roles.dart';
+import 'package:job_manager/data/skills/skill_set.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'person.g.dart';

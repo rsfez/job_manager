@@ -1,5 +1,4 @@
-import 'package:job_manager/data/company.dart';
-import 'package:job_manager/data/role.dart';
+import 'package:job_manager/data/companies/company.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'companies.g.dart';

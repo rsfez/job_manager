@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:job_manager/data/skill_set.dart';
+import 'package:job_manager/data/skills/skill_set.dart';
 import 'package:job_manager/design/dimensions.dart';
 import 'package:job_manager/design/text.dart';
 import 'package:job_manager/widget/skill_row.dart';

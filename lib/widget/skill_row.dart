@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:job_manager/data/domain/mark_model.dart';
-import 'package:job_manager/data/skill.dart';
+import 'package:job_manager/data/skills/skill.dart';
 import 'package:job_manager/widget/mark.dart';
 import 'package:job_manager/widget/trend_image.dart';
 

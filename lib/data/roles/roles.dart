@@ -1,4 +1,4 @@
-import 'package:job_manager/data/role.dart';
+import 'package:job_manager/data/roles/role.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'roles.g.dart';

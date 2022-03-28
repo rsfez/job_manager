@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:job_manager/data/skill.dart';
+import 'package:job_manager/data/skills/skill.dart';
 
 class TrendImage extends StatelessWidget {
   final Trend trend;

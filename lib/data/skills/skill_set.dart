@@ -1,5 +1,5 @@
+import 'package:job_manager/data/skills/skill.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:job_manager/data/skill.dart';
 
 part 'skill_set.g.dart';
 
