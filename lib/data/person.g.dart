@@ -8,10 +8,7 @@ part of 'person.dart';
 
 Person _$PersonFromJson(Map<String, dynamic> json) => Person(
       fullName: json['full_name'] as String,
-      currentRole: Role.fromJson(json['current_role'] as Map<String, dynamic>),
-      previousRoles: (json['previous_roles'] as List<dynamic>)
-          .map((e) => Role.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      roles: Roles.fromJson(json['roles'] as Map<String, dynamic>),
       currentCompany:
           Company.fromJson(json['current_company'] as Map<String, dynamic>),
       previousCompanies: (json['previous_companies'] as List<dynamic>)
@@ -24,8 +21,7 @@ Person _$PersonFromJson(Map<String, dynamic> json) => Person(
 
 Map<String, dynamic> _$PersonToJson(Person instance) => <String, dynamic>{
       'full_name': instance.fullName,
-      'current_role': instance.currentRole,
-      'previous_roles': instance.previousRoles,
+      'roles': instance.roles,
       'current_company': instance.currentCompany,
       'previous_companies': instance.previousCompanies,
       'skill_sets': instance.skillSets,

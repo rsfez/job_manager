@@ -44,7 +44,7 @@ class _HomeState extends State<Home> {
                 backgroundColor: int.parse(person.currentCompany.primaryColor),
                 textColor: int.parse(person.currentCompany.alternateColor),
                 fullName: person.fullName,
-                roleName: person.currentRole.name,
+                roleName: person.roles.currentRole.name,
                 companyName: person.currentCompany.name),
           ),
           body: Padding(
