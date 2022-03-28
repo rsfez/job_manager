@@ -72,7 +72,7 @@ class _HomeState extends State<Home> {
                         children: [
                           SkillSetColumn(skillSet: person.skillSets[2]),
                           const SizedBox(height: spacing5),
-                          // SkillSetColumn(skillSet: person.skillSets[3]),
+                          SkillSetColumn(skillSet: person.skillSets[3]),
                         ],
                       ),
                     ),
