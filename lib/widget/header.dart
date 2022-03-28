@@ -20,9 +20,13 @@ class Header extends AppBar {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisSize: MainAxisSize.max,
                       children: <Widget>[
-                        headerTitle(text: model.getTitle()),
+                        headerTitle(
+                            text: model.getTitle(),
+                            color: Color(model.textColor)),
                         const SizedBox(width: spacing3),
-                        headerText(text: model.getSubtitle())
+                        headerText(
+                            text: model.getSubtitle(),
+                            color: Color(model.textColor))
                       ]),
                   const SizedBox(height: spacing5),
                 ],

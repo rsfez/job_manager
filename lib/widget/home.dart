@@ -41,10 +41,11 @@ class _HomeState extends State<Home> {
           backgroundColor: const Color(primaryBlue),
           appBar: Header(
             model: HeaderModel(
-                backgroundColor: int.parse(person.companies[0].primaryColor),
+                backgroundColor: int.parse(person.currentCompany.primaryColor),
+                textColor: int.parse(person.currentCompany.alternateColor),
                 fullName: person.fullName,
                 roleName: person.roles[0].name,
-                companyName: person.companies[0].name),
+                companyName: person.currentCompany.name),
           ),
           body: Padding(
             padding: const EdgeInsets.only(left: appLeftPadding),

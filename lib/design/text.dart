@@ -21,17 +21,17 @@ Text header(
 Text text_({required String text, required double fontSize}) =>
     Text(text, style: TextStyle(fontSize: fontSize, color: const Color(white)));
 
-Text headerTitle({required String text}) => header(
+Text headerTitle({required String text, required Color color}) => header(
     text: text.toUpperCase(),
     fontFamily: 'Gunzo2',
     fontSize: h1FontSize,
-    color: const Color(white));
+    color: color);
 
-Text headerText({required String text}) => header(
+Text headerText({required String text, required Color color}) => header(
     text: text.toUpperCase(),
     fontFamily: 'Gunzo2',
     fontSize: h3FontSize,
-    color: const Color(white));
+    color: color);
 
 Text h2Yellow({required String text}) => header(
     text: text.toUpperCase(),
