@@ -10,14 +10,12 @@ Person _$PersonFromJson(Map<String, dynamic> json) => Person(
       fullName: json['full_name'] as String,
       roles: Roles.fromJson(json['roles'] as Map<String, dynamic>),
       companies: Companies.fromJson(json['companies'] as Map<String, dynamic>),
-      skillSets: (json['skill_sets'] as List<dynamic>)
-          .map((e) => SkillSet.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      skills: Skills.fromJson(json['skills'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$PersonToJson(Person instance) => <String, dynamic>{
       'full_name': instance.fullName,
       'roles': instance.roles,
       'companies': instance.companies,
-      'skill_sets': instance.skillSets,
+      'skills': instance.skills,
     };

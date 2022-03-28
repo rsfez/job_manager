@@ -8,8 +8,11 @@ part of 'role.dart';
 
 Role _$RoleFromJson(Map<String, dynamic> json) => Role(
       name: json['name'] as String,
+      specificSkills:
+          SkillSet.fromJson(json['specific_skills'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$RoleToJson(Role instance) => <String, dynamic>{
       'name': instance.name,
+      'specific_skills': instance.specificSkills,
     };

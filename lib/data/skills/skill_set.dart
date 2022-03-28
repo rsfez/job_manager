@@ -14,4 +14,6 @@ class SkillSet {
 
   factory SkillSet.fromJson(Map<String, dynamic> json) =>
       _$SkillSetFromJson(json);
+
+  factory SkillSet.empty() => const SkillSet(name: '', skills: <Skill>[]);
 }

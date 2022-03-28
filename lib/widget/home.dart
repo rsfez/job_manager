@@ -60,21 +60,28 @@ class _HomeState extends State<Home> {
                       width: 200,
                       child: InfoColumn(person: person),
                     ),
-                    SizedBox(
-                      width: 240,
-                      child: SkillSetColumn(skillSet: person.skillSets[0]),
-                    ),
-                    SizedBox(
-                      width: 240,
-                      child: SkillSetColumn(skillSet: person.skillSets[1]),
-                    ),
+                    if (person.skills.firstSet != null)
+                      SizedBox(
+                        width: 240,
+                        child:
+                            SkillSetColumn(skillSet: person.skills.firstSet!),
+                      ),
+                    if (person.skills.secondSet != null)
+                      SizedBox(
+                        width: 240,
+                        child:
+                            SkillSetColumn(skillSet: person.skills.secondSet!),
+                      ),
                     SizedBox(
                       width: 240,
                       child: Column(
                         children: [
-                          SkillSetColumn(skillSet: person.skillSets[2]),
+                          SkillSetColumn(
+                              skillSet:
+                                  person.roles.currentRole.specificSkills),
                           const SizedBox(height: spacing5),
-                          SkillSetColumn(skillSet: person.skillSets[3]),
+                          if (person.skills.miscSet != null)
+                            SkillSetColumn(skillSet: person.skills.miscSet!),
                         ],
                       ),
                     ),
