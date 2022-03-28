@@ -1,3 +1,8 @@
+# Privacy related
+
+assets/data.json
+local.properties
+
 # Miscellaneous
 *.class
 *.log
