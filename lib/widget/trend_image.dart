@@ -13,13 +13,19 @@ class TrendImage extends StatelessWidget {
       case Trend.none:
         return const SizedBox();
       case Trend.superb:
-        return Image.asset('trend/superb.png');
+        return Image.asset(
+          'images/trend/superb.png',
+          semanticLabel: 'Trend: superb',
+        );
       case Trend.good:
-        return Image.asset('trend/good.png');
+        return Image.asset('images/trend/good.png',
+            semanticLabel: 'Trend: good');
       case Trend.poor:
-        return Image.asset('trend/poor.png');
+        return Image.asset('images/trend/poor.png',
+            semanticLabel: 'Trend: poor');
       case Trend.terrible:
-        return Image.asset('trend/terrible.png');
+        return Image.asset('images/trend/terrible.png',
+            semanticLabel: 'Trend: terrible');
     }
   }
 }
