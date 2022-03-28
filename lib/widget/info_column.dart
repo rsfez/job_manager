@@ -26,7 +26,8 @@ class InfoColumn extends StatelessWidget {
                   padding: const EdgeInsets.all(spacing5),
                   child: Image.asset(
                     'images/company.png',
-                    semanticLabel: "Logo of ${person.currentCompany.name}",
+                    semanticLabel:
+                        "Logo of ${person.companies.currentCompany.name}",
                   ),
                 ))
               ],

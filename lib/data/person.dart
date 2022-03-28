@@ -1,5 +1,5 @@
+import 'package:job_manager/data/companies.dart';
 import 'package:job_manager/data/company.dart';
-import 'package:job_manager/data/role.dart';
 import 'package:job_manager/data/roles.dart';
 import 'package:job_manager/data/skill_set.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -12,18 +12,15 @@ class Person {
   final String fullName;
   @JsonKey(name: 'roles')
   final Roles roles;
-  @JsonKey(name: 'current_company')
-  final Company currentCompany;
-  @JsonKey(name: 'previous_companies')
-  final List<Company> previousCompanies;
+  @JsonKey(name: 'companies')
+  final Companies companies;
   @JsonKey(name: 'skill_sets')
   final List<SkillSet> skillSets;
 
   const Person(
       {required this.fullName,
       required this.roles,
-      required this.currentCompany,
-      required this.previousCompanies,
+      required this.companies,
       required this.skillSets});
 
   factory Person.fromJson(Map<String, dynamic> json) => _$PersonFromJson(json);
@@ -31,7 +28,6 @@ class Person {
   factory Person.empty() => Person(
       fullName: '',
       roles: Roles.empty(),
-      currentCompany: Company.empty(),
-      previousCompanies: [Company.empty()],
+      companies: Companies.empty(),
       skillSets: []);
 }

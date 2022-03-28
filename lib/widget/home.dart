@@ -37,15 +37,16 @@ class _HomeState extends State<Home> {
       builder: (BuildContext context, AsyncSnapshot<Person> snapshot) {
         if (!snapshot.hasData) return const Scaffold();
         var person = snapshot.data!;
+        var currentCompany = person.companies.currentCompany;
         return Scaffold(
           backgroundColor: const Color(primaryBlue),
           appBar: Header(
             model: HeaderModel(
-                backgroundColor: int.parse(person.currentCompany.primaryColor),
-                textColor: int.parse(person.currentCompany.alternateColor),
+                backgroundColor: int.parse(currentCompany.primaryColor),
+                textColor: int.parse(currentCompany.alternateColor),
                 fullName: person.fullName,
                 roleName: person.roles.currentRole.name,
-                companyName: person.currentCompany.name),
+                companyName: currentCompany.name),
           ),
           body: Padding(
             padding: const EdgeInsets.only(left: appLeftPadding),
