@@ -8,9 +8,9 @@ part 'company.g.dart';
 class Company {
   @JsonKey(name: 'name')
   final String name;
-  @JsonKey(name: 'primaryColor')
+  @JsonKey(name: 'primary_color')
   final String primaryColor;
-  @JsonKey(name: 'alternateColor')
+  @JsonKey(name: 'alternate_color')
   final String alternateColor;
 
   const Company(

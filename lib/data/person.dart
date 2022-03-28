@@ -7,30 +7,34 @@ part 'person.g.dart';
 
 @JsonSerializable()
 class Person {
-  @JsonKey(name: 'fullName')
+  @JsonKey(name: 'full_name')
   final String fullName;
-  @JsonKey(name: 'roles')
-  final List<Role> roles;
-  @JsonKey(name: 'currentCompany')
+  @JsonKey(name: 'current_role')
+  final Role currentRole;
+  @JsonKey(name: 'previous_roles')
+  final List<Role> previousRoles;
+  @JsonKey(name: 'current_company')
   final Company currentCompany;
-  @JsonKey(name: 'companies')
-  final List<Company> companies;
-  @JsonKey(name: 'skillSets')
+  @JsonKey(name: 'previous_companies')
+  final List<Company> previousCompanies;
+  @JsonKey(name: 'skill_sets')
   final List<SkillSet> skillSets;
 
   const Person(
       {required this.fullName,
-      required this.roles,
+      required this.currentRole,
+      required this.previousRoles,
       required this.currentCompany,
-      required this.companies,
+      required this.previousCompanies,
       required this.skillSets});
 
   factory Person.fromJson(Map<String, dynamic> json) => _$PersonFromJson(json);
 
   factory Person.empty() => Person(
       fullName: '',
-      roles: [Role.empty()],
+      currentRole: Role.empty(),
+      previousRoles: [Role.empty()],
       currentCompany: Company.empty(),
-      companies: [Company.empty()],
+      previousCompanies: [Company.empty()],
       skillSets: []);
 }

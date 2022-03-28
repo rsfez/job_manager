@@ -7,24 +7,26 @@ part of 'person.dart';
 // **************************************************************************
 
 Person _$PersonFromJson(Map<String, dynamic> json) => Person(
-      fullName: json['fullName'] as String,
-      roles: (json['roles'] as List<dynamic>)
+      fullName: json['full_name'] as String,
+      currentRole: Role.fromJson(json['current_role'] as Map<String, dynamic>),
+      previousRoles: (json['previous_roles'] as List<dynamic>)
           .map((e) => Role.fromJson(e as Map<String, dynamic>))
           .toList(),
       currentCompany:
-          Company.fromJson(json['currentCompany'] as Map<String, dynamic>),
-      companies: (json['companies'] as List<dynamic>)
+          Company.fromJson(json['current_company'] as Map<String, dynamic>),
+      previousCompanies: (json['previous_companies'] as List<dynamic>)
           .map((e) => Company.fromJson(e as Map<String, dynamic>))
           .toList(),
-      skillSets: (json['skillSets'] as List<dynamic>)
+      skillSets: (json['skill_sets'] as List<dynamic>)
           .map((e) => SkillSet.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
 Map<String, dynamic> _$PersonToJson(Person instance) => <String, dynamic>{
-      'fullName': instance.fullName,
-      'roles': instance.roles,
-      'currentCompany': instance.currentCompany,
-      'companies': instance.companies,
-      'skillSets': instance.skillSets,
+      'full_name': instance.fullName,
+      'current_role': instance.currentRole,
+      'previous_roles': instance.previousRoles,
+      'current_company': instance.currentCompany,
+      'previous_companies': instance.previousCompanies,
+      'skill_sets': instance.skillSets,
     };
