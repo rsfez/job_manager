@@ -14,23 +14,27 @@ class InfoColumn extends StatelessWidget {
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.all(spacing3),
-            child: Row(
-              children: [
-                Expanded(
+            child: SizedBox(
+              width: 200,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Expanded(
+                      child: Image.asset(
+                    'images/person.png',
+                    semanticLabel: "Picture of ${person.fullName}",
+                  )),
+                  Expanded(
+                      child: Padding(
+                    padding: const EdgeInsets.all(spacing5),
                     child: Image.asset(
-                  'images/person.png',
-                  semanticLabel: "Picture of ${person.fullName}",
-                )),
-                Expanded(
-                    child: Padding(
-                  padding: const EdgeInsets.all(spacing5),
-                  child: Image.asset(
-                    'images/company.png',
-                    semanticLabel:
-                        "Logo of ${person.companies.currentCompany.name}",
-                  ),
-                ))
-              ],
+                      'images/company.png',
+                      semanticLabel:
+                          "Logo of ${person.companies.currentCompany.name}",
+                    ),
+                  ))
+                ],
+              ),
             ),
           ),
           const SizedBox(height: spacing3),

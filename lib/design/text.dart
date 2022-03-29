@@ -15,11 +15,13 @@ Text header(
         required double fontSize,
         required Color color}) =>
     Text(text.toUpperCase(),
+        overflow: TextOverflow.ellipsis,
         style: TextStyle(
             fontFamily: fontFamily, fontSize: fontSize, color: color));
 
-Text text_({required String text, required double fontSize}) =>
-    Text(text, style: TextStyle(fontSize: fontSize, color: const Color(white)));
+Text text_({required String text, required double fontSize}) => Text(text,
+    overflow: TextOverflow.ellipsis,
+    style: TextStyle(fontSize: fontSize, color: const Color(white)));
 
 Text headerTitle({required String text, required Color color}) => header(
     text: text.toUpperCase(),

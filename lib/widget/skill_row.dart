@@ -22,8 +22,7 @@ class SkillRow extends StatelessWidget {
               //   color: const Color(heatOrange),
               // ),
               const SizedBox(width: spacing2),
-              p3(text: skill.name),
-              const Spacer(),
+              Expanded(child: p3(text: skill.name)),
               TrendImage(trend: skill.trend),
               const SizedBox(width: spacing5),
               SizedBox(

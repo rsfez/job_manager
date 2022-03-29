@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:job_manager/design/colors.dart';
 import 'package:job_manager/design/dimensions.dart';
 import 'package:job_manager/widget/header.dart';
@@ -9,6 +10,7 @@ import 'package:job_manager/widget/skill_set_column.dart';
 
 import '../data/domain/header_model.dart';
 import '../data/person.dart';
+import '../design/screen.dart';
 import 'info_column.dart';
 
 class Home extends StatefulWidget {
@@ -47,33 +49,28 @@ class _HomeState extends State<Home> {
                 fullName: person.fullName,
                 roleName: person.roles.currentRole.name,
                 companyName: currentCompany.name),
+            context: context,
           ),
           body: Padding(
-            padding: const EdgeInsets.only(left: appLeftPadding),
+            padding:
+                EdgeInsets.only(left: isDesktop(context) ? appLeftPadding : 0),
             child: Center(
               child: Padding(
                 padding: const EdgeInsets.only(top: spacing3),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
+                child: RowOrScrollableColumn(
                   children: <Widget>[
-                    SizedBox(
-                      width: 200,
-                      child: InfoColumn(person: person),
-                    ),
+                    Flexible(child: InfoColumn(person: person)),
                     if (person.skills.firstSet != null)
-                      SizedBox(
-                        width: 240,
+                      Flexible(
                         child:
                             SkillSetColumn(skillSet: person.skills.firstSet!),
                       ),
                     if (person.skills.secondSet != null)
-                      SizedBox(
-                        width: 240,
+                      Flexible(
                         child:
                             SkillSetColumn(skillSet: person.skills.secondSet!),
                       ),
-                    SizedBox(
-                      width: 240,
+                    Flexible(
                       child: Column(
                         children: [
                           SkillSetColumn(

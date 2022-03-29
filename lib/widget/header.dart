@@ -3,17 +3,21 @@ import 'package:job_manager/design/dimensions.dart';
 import 'package:job_manager/design/text.dart';
 
 import '../data/domain/header_model.dart';
+import '../design/screen.dart';
 
 class Header extends AppBar {
   final HeaderModel model;
+  final BuildContext context;
 
-  Header({Key? key, required this.model})
+  Header({Key? key, required this.model, required this.context})
       : super(
             key: key,
             backgroundColor: Color(model.backgroundColor),
-            titleSpacing: 0.0,
+            titleSpacing:
+                isDesktop(context) ? 0.0 : NavigationToolbar.kMiddleSpacing,
             title: Padding(
-              padding: const EdgeInsets.only(left: appLeftPadding),
+              padding: EdgeInsets.only(
+                  left: isDesktop(context) ? appLeftPadding : 0),
               child: Column(
                 children: <Widget>[
                   Row(
