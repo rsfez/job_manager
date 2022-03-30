@@ -2,16 +2,14 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 import 'package:job_manager/design/colors.dart';
 import 'package:job_manager/design/dimensions.dart';
 import 'package:job_manager/widget/header.dart';
-import 'package:job_manager/widget/skill_set_column.dart';
+import 'package:job_manager/widget/panels.dart';
 
 import '../data/domain/header_model.dart';
 import '../data/person.dart';
 import '../design/screen.dart';
-import 'info_column.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -57,33 +55,7 @@ class _HomeState extends State<Home> {
             child: Center(
               child: Padding(
                 padding: const EdgeInsets.only(top: spacing3),
-                child: RowOrScrollableColumn(
-                  children: <Widget>[
-                    Flexible(child: InfoColumn(person: person)),
-                    if (person.skills.firstSet != null)
-                      Flexible(
-                        child:
-                            SkillSetColumn(skillSet: person.skills.firstSet!),
-                      ),
-                    if (person.skills.secondSet != null)
-                      Flexible(
-                        child:
-                            SkillSetColumn(skillSet: person.skills.secondSet!),
-                      ),
-                    Flexible(
-                      child: Column(
-                        children: [
-                          SkillSetColumn(
-                              skillSet:
-                                  person.roles.currentRole.specificSkills),
-                          const SizedBox(height: spacing5),
-                          if (person.skills.miscSet != null)
-                            SkillSetColumn(skillSet: person.skills.miscSet!),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+                child: Panels(person: person),
               ),
             ),
           ),

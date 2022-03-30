@@ -1,6 +1,6 @@
 const int primaryBlue = 0xff1e2e42;
 
-const int secondaryYellow = 0xffe5c16e;
+const int secondaryYellow = 0xffe8bf5f;
 const int secondaryYellowBackground = 0xff393d37;
 
 const int heatOrange = 0xffe06031;

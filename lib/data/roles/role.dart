@@ -7,12 +7,16 @@ part 'role.g.dart';
 class Role {
   @JsonKey(name: 'name')
   final String name;
+  @JsonKey(name: 'rating')
+  final double rating;
   @JsonKey(name: 'specific_skills')
   final SkillSet specificSkills;
 
-  const Role({required this.name, required this.specificSkills});
+  const Role(
+      {required this.name, required this.rating, required this.specificSkills});
 
   factory Role.fromJson(Map<String, dynamic> json) => _$RoleFromJson(json);
 
-  factory Role.empty() => Role(name: '', specificSkills: SkillSet.empty());
+  factory Role.empty() =>
+      Role(name: '', rating: 0.0, specificSkills: SkillSet.empty());
 }

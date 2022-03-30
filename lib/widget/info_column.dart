@@ -3,6 +3,7 @@ import 'package:job_manager/design/text.dart';
 
 import '../data/person.dart';
 import '../design/dimensions.dart';
+import 'info_row.dart';
 
 class InfoColumn extends StatelessWidget {
   final Person person;
@@ -12,33 +13,35 @@ class InfoColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Column(
         children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(spacing3),
-            child: SizedBox(
-              width: 200,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Expanded(
-                      child: Image.asset(
-                    'images/person.png',
-                    semanticLabel: "Picture of ${person.fullName}",
-                  )),
-                  Expanded(
-                      child: Padding(
-                    padding: const EdgeInsets.all(spacing5),
-                    child: Image.asset(
-                      'images/company.png',
-                      semanticLabel:
-                          "Logo of ${person.companies.currentCompany.name}",
-                    ),
-                  ))
-                ],
-              ),
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Flexible(
+                  child: Image.asset(
+                'images/person.png',
+                width: 100,
+                semanticLabel: "Picture of ${person.fullName}",
+              )),
+              const Spacer(),
+              Flexible(
+                  child: Image.asset(
+                'images/company.png',
+                width: 60,
+                semanticLabel:
+                    "Logo of ${person.companies.currentCompany.name}",
+              ))
+            ],
           ),
           const SizedBox(height: spacing3),
-          h2Yellow(text: person.fullName)
+          h2Yellow(text: person.fullName),
+          InfoRow(
+            label: "Current level",
+            rating: person.ratings.current,
+          ),
+          InfoRow(
+            label: "Potential",
+            rating: person.ratings.potential,
+          ),
         ],
       );
 }
