@@ -8,12 +8,12 @@ part of 'roles.dart';
 
 Roles _$RolesFromJson(Map<String, dynamic> json) => Roles(
       currentRole: Role.fromJson(json['current_role'] as Map<String, dynamic>),
-      previousRoles: (json['previous_roles'] as List<dynamic>)
+      other: (json['other_roles'] as List<dynamic>)
           .map((e) => Role.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
 Map<String, dynamic> _$RolesToJson(Roles instance) => <String, dynamic>{
       'current_role': instance.currentRole,
-      'previous_roles': instance.previousRoles,
+      'other_roles': instance.other,
     };

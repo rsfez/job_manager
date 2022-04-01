@@ -7,24 +7,23 @@ part 'roles.g.dart';
 class Roles {
   @JsonKey(name: 'current_role')
   final Role currentRole;
-  @JsonKey(name: 'previous_roles')
-  final List<Role> previousRoles;
+  @JsonKey(name: 'other_roles')
+  final List<Role> other;
 
-  Roles({required this.currentRole, required this.previousRoles});
+  Roles({required this.currentRole, required this.other});
 
   factory Roles.fromJson(Map<String, dynamic> json) => _$RolesFromJson(json);
 
-  factory Roles.empty() =>
-      Roles(currentRole: Role.empty(), previousRoles: <Role>[]);
+  factory Roles.empty() => Roles(currentRole: Role.empty(), other: <Role>[]);
 
   Role getRole(int index) {
     switch (index) {
       case 0:
         return currentRole;
       default:
-        return previousRoles[index - 1];
+        return other[index - 1];
     }
   }
 
-  int getLength() => previousRoles.length + 1;
+  int getLength() => other.length + 1;
 }
