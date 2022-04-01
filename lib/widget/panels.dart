@@ -1,9 +1,11 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:job_manager/data/person.dart';
 import 'package:job_manager/data/roles/role.dart';
 import 'package:job_manager/widget/roles_column.dart';
 import 'package:job_manager/widget/skill_set_column.dart';
 
+import '../data/skills/skill_set.dart';
 import '../design/dimensions.dart';
 import '../design/screen.dart';
 import 'info_column.dart';
@@ -37,6 +39,7 @@ class _PanelsState extends State<Panels> {
           Flexible(
             flex: 3,
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(children: getSkillSets()),
                 RolesColumn(
@@ -66,8 +69,7 @@ class _PanelsState extends State<Panels> {
           child: Column(
             children: [
               SkillSetColumn(
-                  skillSet: widget.person.roles.currentRole.specificSkills,
-                  selectedRole: selectedRole),
+                  skillSet: getSpecificSkills(), selectedRole: selectedRole),
               const SizedBox(height: spacing5),
               if (widget.person.skills.miscSet != null)
                 SkillSetColumn(skillSet: widget.person.skills.miscSet!),
@@ -75,4 +77,8 @@ class _PanelsState extends State<Panels> {
           ),
         ),
       ];
+
+  SkillSet getSpecificSkills() => selectedRole == null
+      ? widget.person.roles.currentRole.specificSkills
+      : selectedRole!.specificSkills;
 }
