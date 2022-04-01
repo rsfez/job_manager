@@ -94,6 +94,12 @@ flutter:
 
   assets:
     - assets/data.json
+    - assets/images/company.png
+    - assets/images/person.png
+    - assets/images/trend/good.png
+    - assets/images/trend/poor.png
+    - assets/images/trend/superb.png
+    - assets/images/trend/terrible.png
 
   fonts:
     - family: Gunzo2
