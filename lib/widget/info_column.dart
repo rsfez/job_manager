@@ -18,14 +18,14 @@ class InfoColumn extends StatelessWidget {
             children: [
               Flexible(
                   child: Image.asset(
-                'images/person.png',
+                'assets/images/person.png',
                 width: 100,
                 semanticLabel: "Picture of ${person.fullName}",
               )),
               const Spacer(),
               Flexible(
                   child: Image.asset(
-                'images/company.png',
+                'assets/images/company.png',
                 width: 60,
                 semanticLabel:
                     "Logo of ${person.companies.currentCompany.name}",

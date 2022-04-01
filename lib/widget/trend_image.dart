@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:job_manager/data/skills/skill.dart';
 
+const String trendPath = "assets/images/trend/";
+
 class TrendImage extends StatelessWidget {
   final Trend trend;
 
@@ -14,17 +16,17 @@ class TrendImage extends StatelessWidget {
         return const SizedBox();
       case Trend.superb:
         return Image.asset(
-          'images/trend/superb.png',
+          trendPath + 'superb.png',
           semanticLabel: 'Trend: superb',
         );
       case Trend.good:
-        return Image.asset('images/trend/good.png',
+        return Image.asset(trendPath + 'good.png',
             semanticLabel: 'Trend: good');
       case Trend.poor:
-        return Image.asset('images/trend/poor.png',
+        return Image.asset(trendPath + 'poor.png',
             semanticLabel: 'Trend: poor');
       case Trend.terrible:
-        return Image.asset('images/trend/terrible.png',
+        return Image.asset(trendPath + 'terrible.png',
             semanticLabel: 'Trend: terrible');
     }
   }
