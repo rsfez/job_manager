@@ -1,4 +1,5 @@
 const int primaryBlue = 0xff1e2e42;
+const int primaryBlueDarker = 0xff182337;
 
 const int secondaryYellow = 0xffe8bf5f;
 const int secondaryYellowBackground = 0xff393d37;

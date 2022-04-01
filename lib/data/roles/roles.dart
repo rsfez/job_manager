@@ -16,4 +16,15 @@ class Roles {
 
   factory Roles.empty() =>
       Roles(currentRole: Role.empty(), previousRoles: <Role>[]);
+
+  Role getRole(int index) {
+    switch (index) {
+      case 0:
+        return currentRole;
+      default:
+        return previousRoles[index - 1];
+    }
+  }
+
+  int getLength() => previousRoles.length + 1;
 }
